@@ -18,8 +18,9 @@ export class AppComponent {
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+
+    // init form
     this.createForm();
-    // this.setChangeValidate()
   }
 
   createForm() {
@@ -45,9 +46,7 @@ export class AppComponent {
           name: ['', Validators.required],
           phone: ['', [ Validators.required, Validators.pattern(this.phoneRegex)]],
         })
-      ]),
-
-      description: ['']
+      ])
     });
   }
 
@@ -72,6 +71,7 @@ export class AppComponent {
     )
   }
 
+  // remove last index of contacts array 
   removeContactField() {
     let control = <FormArray>this.companyForm.controls.contacts;
     control.removeAt(control.length - 1)
