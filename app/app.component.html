@@ -59,9 +59,13 @@
     <!-- nested form array with form group -->
     <div formArrayName="contacts">
       <span class="fill-remaining-space">Contacts</span>
-      <button mat-stroked-button color="accent" type="button"
+      <button mat-stroked-button color="primary" type="button"
           (click)="addContactField()">
           Add Contact
+      </button>
+      <button mat-stroked-button color="warn" type="button"
+          (click)="removeContactField()">
+          Remove Last Contact
       </button>
       <table class="full-width" cellspacing="0">
         <tr *ngFor="let contact of contacts.controls; let i = index" 

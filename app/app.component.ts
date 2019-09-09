@@ -72,6 +72,11 @@ export class AppComponent {
     )
   }
 
+  removeContactField() {
+    let control = <FormArray>this.companyForm.controls.contacts;
+    control.removeAt(control.length - 1)
+  }
+
   // form controls access for validation
   get companyName(){
     return this.companyForm.get('companyName');
